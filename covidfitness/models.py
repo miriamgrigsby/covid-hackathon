@@ -37,3 +37,4 @@ class UserProfile(models.Model):
     last_name=models.CharField(max_length=200, null=True, blank=True)
     gender=models.CharField(choices=GENDER_CHOICES, max_length=10, null=True, blank=True)
     email=models.EmailField()
+    user=models.ForeignKey(User, related_name="profile", on_delete=models.CASCADE)
