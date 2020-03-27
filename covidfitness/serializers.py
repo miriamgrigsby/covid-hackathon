@@ -1,4 +1,4 @@
-from .models import Challenge, UserChallenge, CompletedChallenge
+from .models import Challenge, UserChallenge, CompletedChallenge, UserProfile
 from rest_framework import serializers
 
 class ChallengeSerializer(serializers.ModelSerializer):
@@ -14,4 +14,9 @@ class UserChallengeSerializer(serializers.ModelSerializer):
 class CompletedChallengeSerializer(serializers.ModelSerializer):
     class Meta:
         model = CompletedChallenge
+        fields = '__all__'
+
+class UserProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserProfile
         fields = '__all__'

@@ -1,6 +1,6 @@
 from rest_framework import viewsets, permissions, mixins
-from .serializers import ChallengeSerializer, UserChallengeSerializer, CompletedChallengeSerializer
-from .models import Challenge, UserChallenge, CompletedChallenge
+from .serializers import ChallengeSerializer, UserChallengeSerializer, CompletedChallengeSerializer, UserProfileSerializer
+from .models import Challenge, UserChallenge, CompletedChallenge, UserProfile
 
 class ChallengeViewSet(viewsets.ModelViewSet):
     queryset = Challenge.objects.all()
@@ -43,3 +43,19 @@ class CompletedChallengeViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin
         permissions.AllowAny
     ]
     serializer_class = CompletedChallengeSerializer
+
+class AUTHUserProfileViewSet(viewsets.ModelViewSet):
+    permission_classes = [
+        permissions.IsAuthenticated
+    ]
+    serializer_class = UserProfileSerializer
+
+    def get_queryset(self):
+        return self.request.user.completed.all()
+
+class UserProfileViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):
+    queryset = UserProfile.objects.all()
+    permission_classes = [
+        permissions.AllowAny
+    ]
+    serializer_class = UserProfileSerializer

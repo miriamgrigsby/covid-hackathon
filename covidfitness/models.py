@@ -20,3 +20,20 @@ class CompletedChallenge(models.Model):
     photo=models.ImageField(upload_to='challenge_photos', blank=True)
     user=models.ForeignKey(User, related_name="completed", on_delete=models.CASCADE)
     date_created=models.DateField(auto_now_add=True)
+
+class UserProfile(models.Model):
+    GENDER_CHOICES = [
+        ('F', 'Female',),
+        ('M', 'Male'),
+        ('O', 'Other')
+    ]
+    points=models.IntegerField(blank=True)
+    city=models.CharField(max_length=200, blank=True)
+    country=models.CharField(max_length=200, blank=True)
+    bio=models.TextField(blank=True)
+    photo=models.ImageField(upload_to="challenge_photos", blank=True)
+    age=models.IntegerField(blank=True)
+    first_name=models.CharField(max_length=200)
+    last_name=models.CharField(max_length=200)
+    gender=models.CharField(choices=GENDER_CHOICES, max_length=10, blank=True)
+    email=models.EmailField()
