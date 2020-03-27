@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class Challenge(models.Model):
+    title=models.CharField(max_length=200)
     workout_type=models.CharField(max_length=200)
     reps=models.IntegerField()
     sport=models.TextField()
