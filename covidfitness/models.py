@@ -5,6 +5,8 @@ class Challenge(models.Model):
     workout_type=models.CharField(max_length=200)
     reps=models.IntegerField()
     sport=models.TextField()
+    daily=models.BooleanField(blank=True)
+    points=models.IntegerField()
 
 class UserChallenge(models.Model):
     time_created=models.DateTimeField(auto_now=True)
@@ -17,3 +19,4 @@ class CompletedChallenge(models.Model):
     user_challenge=models.ForeignKey(UserChallenge, related_name="completed_challenges", on_delete=models.CASCADE)
     photo=models.ImageField(upload_to='challenge_photos', blank=True)
     user=models.ForeignKey(User, related_name="completed", on_delete=models.CASCADE)
+    date_created=models.DateField(auto_now_add=True)
