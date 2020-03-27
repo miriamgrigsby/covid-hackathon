@@ -27,7 +27,7 @@ class UserProfile(models.Model):
         ('M', 'Male'),
         ('O', 'Other')
     ]
-    points=models.IntegerField(null=True, blank=True)
+    points=models.IntegerField(null=True, default=0)
     city=models.CharField(max_length=200, null=True, blank=True)
     country=models.CharField(max_length=200, null=True, blank=True)
     bio=models.TextField(null=True, blank=True)
