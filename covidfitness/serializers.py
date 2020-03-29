@@ -9,7 +9,7 @@ class ChallengeSerializer(serializers.ModelSerializer):
 class UserChallengeSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserChallenge
-        fields = ('id', 'time_created', 'challenge', 'user', 'repeat', 'failed', 'completed_challenges')
+        fields = '__all__'
 
 class CompletedChallengeSerializer(serializers.ModelSerializer):
     class Meta:

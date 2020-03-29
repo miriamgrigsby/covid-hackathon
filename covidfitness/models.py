@@ -13,7 +13,7 @@ class UserChallenge(models.Model):
     time_created=models.DateTimeField(auto_now=True)
     user=models.ForeignKey(User, related_name="challenges", on_delete=models.CASCADE)
     challenge=models.ForeignKey(Challenge, related_name="users", on_delete=models.CASCADE)
-    failed=models.BooleanField(blank=True)
+    failed=models.BooleanField(blank=True, null=True)
     repeat=models.BooleanField(default=True)
 
 class CompletedChallenge(models.Model):
