@@ -51,7 +51,7 @@ class AUTHUserProfileViewSet(viewsets.ModelViewSet):
     serializer_class = UserProfileSerializer
 
     def get_queryset(self):
-        return self.request.user.completed.all()
+        return self.request.user.profile.all()
 
 class UserProfileViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):
     queryset = UserProfile.objects.all()
