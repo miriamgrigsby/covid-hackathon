@@ -18,7 +18,7 @@ class UserChallenge(models.Model):
 
 class CompletedChallenge(models.Model):
     user_challenge=models.ForeignKey(UserChallenge, related_name="completed_challenges", on_delete=models.CASCADE)
-    photo=models.ImageField(upload_to='challenge_photos', blank=True)
+    photo=models.FileField(upload_to='challenge_photos', blank=True)
     user=models.ForeignKey(User, related_name="completed", on_delete=models.CASCADE)
     date_created=models.DateField(auto_now_add=True)
 
