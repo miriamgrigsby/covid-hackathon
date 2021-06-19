@@ -38,10 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'covidfitness',
+    'tokens',
     'rest_framework',
     'corsheaders',
-    'accounts',
     'knox',
 ]
 
@@ -98,7 +97,7 @@ WSGI_APPLICATION = 'covid_backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'covidhackathon',
+        'NAME': 'fuzzy',
         'USER': 'acc',
         'PASSWORD': '',
         'HOST': 'localhost',
