@@ -62,6 +62,7 @@ MIDDLEWARE = [
 
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000",
+    "https://fuzzy-coin.web.app/"
 ]
 
 CORS_ALLOWED_ORIGINS =[
