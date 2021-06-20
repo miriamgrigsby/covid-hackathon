@@ -64,6 +64,10 @@ CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000",
 ]
 
+CORS_ALLOWED_ORIGINS =[
+    "https://fuzzy-coin.web.app/"
+]
+
 ROOT_URLCONF = 'fuzzy_backend.urls'
 
 TEMPLATES = [
