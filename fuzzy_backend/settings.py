@@ -62,12 +62,12 @@ MIDDLEWARE = [
 
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000",
-    "https://fuzzy-coin.web.app"
+    "https://fuzzy-inu-tools.web.app"
 ]
 
 CORS_ALLOWED_ORIGINS =[
     "http://localhost:3000",
-    "https://fuzzy-coin.web.app"
+    "https://fuzzy-inu-tools.web.app"
 ]
 
 ROOT_URLCONF = 'fuzzy_backend.urls'
