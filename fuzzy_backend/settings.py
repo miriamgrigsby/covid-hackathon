@@ -112,8 +112,7 @@ DATABASES = {
         "OPTIONS": {
             "sslmode": "verify-ca",
             "sslrootcert": os.path.join(BASE_DIR, "rds-combined-ca-bundle.pem")
-        }
-
+        },
     }
 }
 
