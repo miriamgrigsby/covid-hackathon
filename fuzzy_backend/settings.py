@@ -109,6 +109,11 @@ DATABASES = {
         'PASSWORD': 'password',
         'HOST': 'rds-postgres-fuzzy-inu-tools.cpreblixewgm.us-east-2.rds.amazonaws.com',
         'PORT': '5432',
+        "OPTIONS": {
+            "sslmode": "verify-ca",
+            "sslrootcert": os.path.join(BASE_DIR, "rds-combined-ca-bundle.pem")
+        }
+
     }
 }
 
