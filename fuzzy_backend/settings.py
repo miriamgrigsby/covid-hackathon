@@ -112,6 +112,9 @@ DATABASES = {
     }
 }
 
+# postgres://acc:password@rds-postgres-fuzzy-inu-tools.cpreblixewgm.us-east-2.rds.amazonaws.com:5432/fuzzy
+# postgres://acc:password@rds-postgres-fuzzy-inu-tools.cpreblixewgm.us-east-2.rds.amazonaws.com/fuzzy?sslmode=verify-full&sslrootcert=config/rds-combined-ca-bundle.pem
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
