@@ -107,7 +107,7 @@ DATABASES = {
         'NAME': 'fuzzy',
         'USER': 'acc',
         'PASSWORD': 'password',
-        'HOST': 'rds-postgres-fuzzy-inu-tools.cpreblixewgm.us-east-2.rds.amazonaws.com',
+        'HOST': 'fuzzy-coin.cpreblixewgm.us-east-2.rds.amazonaws.com',
         'PORT': '5432',
         "OPTIONS": {
             "sslmode": "verify-ca",
@@ -118,6 +118,8 @@ DATABASES = {
 
 # postgres://acc:password@rds-postgres-fuzzy-inu-tools.cpreblixewgm.us-east-2.rds.amazonaws.com:5432/fuzzy
 # postgres://acc:password@rds-postgres-fuzzy-inu-tools.cpreblixewgm.us-east-2.rds.amazonaws.com/fuzzy?sslmode=verify-full&sslrootcert=config/rds-combined-ca-bundle.pem
+
+# postgresql://acc:password@awsrdshost:5432/fuzzy?sslrootcert=rds-combined-ca-bundle.pem&sslmode=require
 
 
 # Password validation
