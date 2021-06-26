@@ -90,17 +90,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'fuzzy_backend.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -109,16 +98,19 @@ DATABASES = {
         'PASSWORD': 'password',
         'HOST': 'fuzzy-coin.cpreblixewgm.us-east-2.rds.amazonaws.com',
         'PORT': '5432',
-        "OPTIONS": {
-            "sslmode": "verify-full",
-            "sslrootcert": os.path.join(BASE_DIR, "rds-combined-ca-bundle.pem")
+        'OPTIONS': {
+            'sslmode': 'require',
+            'sslrootcert': os.path.join(BASE_DIR, 'rds-combined-ca-bundle.pem')
         },
     }
 }
 
 # "mysql2://username:password@hostname/dbname?sslca=config/amazon-rds-ca-cert.pem
 
-# postgres://acc:password@rds-postgres-fuzzy-inu-tools.cpreblixewgm.us-east-2.rds.amazonaws.com:5432/fuzzy
+# postgres://acc:password@fuzzy-coin.cpreblixewgm.us-east-2.rds.amazonaws.com/fuzzy?sslca=config/amazon-rds-ca-cert.pem
+
+# mysql2://username:password@hostname/dbname?sslca=config/amazon-rds-ca-cert.pem
+
 # postgres://acc:password@rds-postgres-fuzzy-inu-tools.cpreblixewgm.us-east-2.rds.amazonaws.com/fuzzy?sslmode=verify-full&sslrootcert=config/rds-combined-ca-bundle.pem
 
 # postgresql://acc:password@awsrdshost:5432/fuzzy?sslrootcert=rds-combined-ca-bundle.pem&sslmode=require
